@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laiv.com</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="fullPage.html">⬅Назад</a></li>
+            <li><a href="firstPage.html">Начало</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+            <li id="logo">Laiv</li>
+        </ul>
+    </nav>
+    <div class="product-page">
+        <div class="gallery">
+            <img id="main-image" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/99296cfb-e632-4f65-8d4b-1ef8c3416906/M+NSW+TEE+ICON+SWOOSH.png" alt="Product Image">
+            <div class="thumbnails">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/99296cfb-e632-4f65-8d4b-1ef8c3416906/M+NSW+TEE+ICON+SWOOSH.png" alt="Thumbnail 1" class="thumbnail" onclick="changeImage('https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/99296cfb-e632-4f65-8d4b-1ef8c3416906/M+NSW+TEE+ICON+SWOOSH.png')">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/361cfe9c-acf5-427e-834a-511a31186836/M+NSW+TEE+ICON+SWOOSH.png" alt="Thumbnail 2" class="thumbnail" onclick="changeImage('https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/361cfe9c-acf5-427e-834a-511a31186836/M+NSW+TEE+ICON+SWOOSH.png')">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1>Тениска Nike Bold Red</h1>
+            <p class="price">33.99лв.</p>
+            <p class="description">Тениска, с която да покажете увереността си.</p>
+            <div class="thumbnails">
+                <h1 class="thumbnail1 active" >S</h1>
+                <h3 class="thumbnail1">M</h3>
+                <h3 class="thumbnail1">L</h3>
+                <h3 class="thumbnail1">XL</h3>
+            </div>
+            <button class="add-to-cart">Добави в количката</button>
+        </div>
+    </div>
+
+    <script>  
+   function changeImage(image) {
+    document.getElementById('main-image').src = image;
+}
+const thumbnails = document.querySelectorAll('.thumbnail1');
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        thumbnails.forEach(th => th.classList.remove('active'));
+        thumbnail.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>
+

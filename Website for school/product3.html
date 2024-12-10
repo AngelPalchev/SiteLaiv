@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laiv.com</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="fullPage.html">⬅Назад</a></li>
+            <li><a href="firstPage.html">Начало</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+            <li id="logo">Laiv</li>
+        </ul>
+    </nav>
+    <div class="product-page">
+        <div class="gallery">
+            <img id="main-image" src="https://cdn.sportdepot.bg/files/products/BV2713-063_01.jpg" alt="Product Image">
+            <div class="thumbnails">
+                <img src="https://cdn.sportdepot.bg/files/products/BV2713-063_01.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeImage('https://cdn.sportdepot.bg/files/products/BV2713-063_01.jpg')">
+                <img src="https://cdn.sportdepot.bg/files/products/BV2713-063_05.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeImage('https://cdn.sportdepot.bg/files/products/BV2713-063_05.jpg')">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1>Панталон Nike Plain Grey</h1>
+            <p class="price">45.99лв.</p>
+            <p class="description">Удобен за ежедневието и спорта.</p>
+            <div class="thumbnails">
+                <h1 class="thumbnail1 active" >S</h1>
+                <h3 class="thumbnail1">M</h3>
+                <h3 class="thumbnail1">L</h3>
+                <h3 class="thumbnail1">XL</h3>
+            </div>
+            <button class="add-to-cart">Добави в количката</button>
+        </div>
+    </div>
+    <script> 
+
+   function changeImage(image) {
+    document.getElementById('main-image').src = image;
+}
+const thumbnails = document.querySelectorAll('.thumbnail1');
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        thumbnails.forEach(th => th.classList.remove('active'));
+        thumbnail.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>
+

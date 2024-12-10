@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laiv.com</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="fullPage.html">⬅Назад</a></li>
+            <li><a href="firstPage.html">Начало</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+            <li id="logo">Laiv</li>
+        </ul>
+    </nav>
+    <div class="product-page">
+        <div class="gallery">
+            <img id="main-image" src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/30cef655-99e3-4173-9cd9-9f176148d5e7/U+NK+CLUB+CAP+U+CB+FUT+WSH+L.png" alt="Product Image">
+            <div class="thumbnails">
+                <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/30cef655-99e3-4173-9cd9-9f176148d5e7/U+NK+CLUB+CAP+U+CB+FUT+WSH+L.png" alt="Thumbnail 1" class="thumbnail" onclick="changeImage('https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/30cef655-99e3-4173-9cd9-9f176148d5e7/U+NK+CLUB+CAP+U+CB+FUT+WSH+L.png')">
+                <img src="https://www.nike.qa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw8a80cea0/nk/742/d/d/9/d/d/742dd9dd_07be_4486_b62d_c5590988b930.jpg?sw=700&sh=700&sm=fit&q=100&strip=false" alt="Thumbnail 2" class="thumbnail" onclick="changeImage('https://www.nike.qa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw8a80cea0/nk/742/d/d/9/d/d/742dd9dd_07be_4486_b62d_c5590988b930.jpg?sw=700&sh=700&sm=fit&q=100&strip=false')">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1>Шапка Nike Basic</h1>
+            <p class="price">25.99лв.</p>
+            <p class="description">Мека и удобна, в неутрален сив тон, съчетава се лесно с всяка визия.</p>
+            <div class="thumbnails">
+                <h1 class="thumbnail1 active" >S</h1>
+                <h3 class="thumbnail1">M</h3>
+                <h3 class="thumbnail1">L</h3>
+                <h3 class="thumbnail1">XL</h3>
+            </div>
+            <button class="add-to-cart">Добави в количката</button>
+        </div>
+    </div>
+    <script>  
+   function changeImage(image) {
+    document.getElementById('main-image').src = image;
+}
+const thumbnails = document.querySelectorAll('.thumbnail1');
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        thumbnails.forEach(th => th.classList.remove('active'));
+        thumbnail.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>
+
